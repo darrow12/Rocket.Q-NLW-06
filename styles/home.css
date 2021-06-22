@@ -1,0 +1,51 @@
+.content {
+  display: grid;
+  grid-template-columns: 60% 40%; /* tem sempre que dar 100% */
+  grid-template-rows: 11.4rem 1fr;
+
+  grid-template-areas: 
+  'header header'
+  'left right';
+}
+
+header {
+  grid-area: header;
+}
+
+#bg {
+  grid-area: left;
+
+  background: url('/assets/home-bg.svg') no-repeat top/contain;
+}
+
+main {
+  grid-area: right;
+
+  display: flex;
+  align-items: center;
+}
+
+main .container {
+  width: min(36.3rem 100%); /* sempre pega o minimo. Ele pode ter 100% de largura, mas sempre ira dar preferencia para o menor; entao se 100% for menor, ele pega 100%; se 36.3rem for menor ele pega 36.3; | se tivermos em uma tela mt pequena, e 100% da tela ultrapssar o valor do rem, ele pare de seguir o rem e segue 100% ou seja, ele nunca vai quebrar a tela */
+}
+
+main h2 {
+  font-family: 'Poppins', sans-serif;
+  color: var(--black);
+  font-size: clamp(20px, 5vw, 2.8rem);
+  margin-bottom: 2.4rem; /* 1:41:15 */
+}
+
+
+
+input {
+  border: .2rem solid var(--grey-blue);
+  padding: 0 1.6rem;
+  height: 5rem;
+  border-radius: .8rem;
+}
+
+input, button, .button {
+  width: 100%;
+  margin-bottom: 1.8rem;
+}
